@@ -1,4 +1,4 @@
-# @janus-idp/cli
+# @redhat-developer/rhdh-cli
 
 This package provides a CLI for developing and exporting Backstage plugins as dynamic plugins. It implements a few new commands on top of the @backstage/cli codebase:
 
@@ -14,7 +14,7 @@ This package also has a modified version of the `package start` and `package bui
 Install the package via Yarn:
 
 ```sh
-yarn add @janus-idp/cli
+yarn add @redhat-developer/rhdh-cli
 ```
 
 ## Development
@@ -29,8 +29,4 @@ To try out the command locally, you can execute the following from the parent di
 
 ## Documentation
 
-<<<<<<< Updated upstream
 - [Dynamic Plugins Documentation](https://github.com/janus-idp/backstage-showcase/blob/main/docs/dynamic-plugins.md#dynamic-plugins-support)
-=======
-- [Dynamic Plugins Documentation](https://github.com/redhat-developer/rhdh/blob/main/docs/dynamic-plugins)
->>>>>>> Stashed changes
