@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redhat-developer-hub-cli
+  title: '@redhat-developer-hub/cli'
+  description: This package provides a CLI for Red Hat Developer Hub.
+  annotations:
+    backstage.io/source-location: url:https://github.com/redhat-developer/rhdh-cli/tree/main/workspaces/rhdh-cli/packages/cli
+    backstage.io/view-url: https://github.com/redhat-developer/rhdh-cli/blob/main/workspaces/rhdh-cli/packages/cli/catalog-info.yaml
+    backstage.io/edit-url: https://github.com/redhat-developer/rhdh-cli/edit/main/workspaces/rhdh-cli/packages/cli/catalog-info.yaml
+    github.com/project-slug: redhat-developer/rhdh-cli
+    github.com/team-slug: redhat-developer/rhdh-dynamic-plugins
+  tags:
+    - cli
+  links:
+    - url: https://github.com/redhat-developer/rhdh-plugins/tree/main/workspaces/rhdh-cli/packages/cli
+      title: GitHub Source
+      icon: source
+      type: source
+spec:
+  type: cli
+  lifecycle: experimental
+  owner: rhdh-team
+  system: rhdh
+  subcomponentOf: redhat-developer-hub
