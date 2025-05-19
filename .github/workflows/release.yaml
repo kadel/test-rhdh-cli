@@ -25,7 +25,7 @@ jobs:
         uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
         with:
           # TODO: update this
-          app-id: ${{ vars.RHDH_GH_APP_ID }}
+          app-id: ${{ secrets.RHDH_GH_APP_ID }}
           private-key: ${{ secrets.RHDH_GH_APP_PRIVATE_KEY }}
 
       - name: Checkout
