@@ -20,7 +20,7 @@ jobs:
   changeset-feedback:
     name: Generate Changeset Feedback
     # prevent running towards forks and version packages
-    if: github.repository == 'redhat-developer/rhdh-cli' && github.event.pull_request.user.login != 'rhdh-bot'
+    if: github.repository == 'kadel/test-rhdh-cli' && github.event.pull_request.user.login != 'rhdh-bot'
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
