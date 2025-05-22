@@ -28,7 +28,7 @@ jobs:
         run: yarn install --immutable
 
       - name: type checking and declarations
-        run: yarn tsc:full
+        run: yarn tsc
 
       - name: prettier
         run: yarn prettier:check
