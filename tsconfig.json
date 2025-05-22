@@ -1,18 +1,10 @@
 {
   "extends": "@backstage/cli/config/tsconfig.json",
-  "include": [
-    "packages/*/src",
-    "plugins/*/src",
-    "plugins/*/dev",
-    "plugins/*/migrations"
-  ],
-  "files": ["node_modules/@backstage/cli/asset-types/asset-types.d.ts"],
-  "exclude": ["node_modules"],
+  "include": ["src"],
+  "exclude": ["node_modules", "templates"],
   "compilerOptions": {
-    "outDir": "dist-types",
+    "outDir": "../../dist-types/packages/cli",
     "rootDir": ".",
-    "lib": ["DOM", "DOM.Iterable", "ScriptHost", "ES2022"],
-    "target": "ES2022",
     "useUnknownInCatchVariables": false
   }
 }

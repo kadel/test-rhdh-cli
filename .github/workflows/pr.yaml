@@ -8,7 +8,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   ci:
     name: CI
     runs-on: ubuntu-latest
@@ -19,7 +18,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
 
       - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -37,9 +35,6 @@ jobs:
 
       - name: prettier
         run: yarn prettier:check
-
-      - name: check api reports and generate API reference
-        run: yarn build:api-reports:only --ci
 
       - name: build all packages
         run: yarn backstage-cli repo build --all

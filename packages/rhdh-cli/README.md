@@ -1,2 +1,0 @@
-# @redhat-developer-hub/cli
-
