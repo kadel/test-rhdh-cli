@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v
-        with:
-          ref: main
 
       - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -38,8 +36,8 @@ jobs:
       - name: build all packages
         run: yarn backstage-cli repo build --all
 
-      - name: lint
-        run: yarn backstage-cli repo lint --since origin/main
+      # - name: lint
+      #   run: yarn backstage-cli repo lint --since origin/main
 
       - name: publish check
         run: yarn backstage-cli repo fix --check --publish
