@@ -24,6 +24,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
+      - run: npm whoami
+       
       - name: Publish Packages
         run: yarn changeset publish
         env:
