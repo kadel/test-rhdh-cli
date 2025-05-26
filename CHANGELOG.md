@@ -1,5 +1,11 @@
 ## @janus-idp/cli 1.0.0 (2024-08-06)
 
+## 3.6.2
+
+### Patch Changes
+
+- c2e7720: test
+
 ## 3.6.1
 
 ### Patch Changes
