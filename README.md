@@ -29,4 +29,8 @@ To try out the command locally, you can execute the following from the parent di
 
 ## Documentation
 
+<<<<<<< Updated upstream
 - [Dynamic Plugins Documentation](https://github.com/janus-idp/backstage-showcase/blob/main/docs/dynamic-plugins.md#dynamic-plugins-support)
+=======
+- [Dynamic Plugins Documentation](https://github.com/redhat-developer/rhdh/blob/main/docs/dynamic-plugins)
+>>>>>>> Stashed changes
