@@ -11,7 +11,9 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
     env:
       CI: true
 
@@ -44,6 +46,14 @@ jobs:
 
       - name: test changed packages
         run: yarn backstage-cli repo test --coverage --maxWorkers=3
+
+
+      - name: Create a Version Pull Request
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: ensure clean working directory
         run: |
