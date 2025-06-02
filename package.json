@@ -27,9 +27,7 @@
     "prettier:check": "prettier --ignore-unknown --check .",
     "prettier:fix": "prettier --ignore-unknown --write .",
     "test": "backstage-cli package test --passWithNoTests --coverage",
-    "clean": "backstage-cli package clean",
-    "prepare": "yarn build",
-    "publish": "npm publish"
+    "clean": "backstage-cli package clean"
   },
   "bin": {
     "rhdh-cli": "bin/rhdh-cli"
