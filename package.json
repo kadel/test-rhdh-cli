@@ -29,9 +29,7 @@
     "test": "backstage-cli package test --passWithNoTests --coverage",
     "clean": "backstage-cli package clean"
   },
-  "bin": {
-    "rhdh-cli": "bin/rhdh-cli"
-  },
+  "bin": "bin/rhdh-cli",
   "dependencies": {
     "@backstage/cli-common": "^0.1.15",
     "@backstage/cli-node": "^0.2.12",
