@@ -57,5 +57,6 @@ jobs:
             echo ""
             git status --short
             echo ""
+            git diff
             exit 1
           fi
