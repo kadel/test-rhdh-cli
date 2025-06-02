@@ -3,7 +3,6 @@ name: Version Packages
 on:
   workflow_dispatch:
 
-
 jobs:
   version:
     name: Version Packages
@@ -30,16 +29,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Create a Version Pull Request
-        id: changesets
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: "npm view @tomaskral-tests/rhdh-cli versions"
       - name: Publish
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        # You can do something when a publish should happen.
         run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
