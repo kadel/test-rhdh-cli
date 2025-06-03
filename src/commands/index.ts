@@ -33,52 +33,12 @@ const configOption = [
  */
 export function registerScriptCommand(program: Command) {
   const command = program
-    .command('package [command]')
-    .description('Lifecycle scripts for individual packages');
+    .command('plugin [command]')
+    .description('Lifecycle scripts for individual plugins');
+
 
   command
-    .command('start')
-    .description('Start a package for local development')
-    .option(...configOption)
-    .option('--role <name>', 'Run the command with an explicit package role')
-    .option('--check', 'Enable type checking and linting if available')
-    .option('--inspect', 'Enable debugger in Node.js environments')
-    .option(
-      '--inspect-brk',
-      'Enable debugger in Node.js environments, breaking before code starts',
-    )
-    .action(lazy(() => import('./start').then(m => m.command)));
-
-  command
-    .command('build')
-    .description('Build a package for production deployment or publishing')
-    .option('--role <name>', 'Run the command with an explicit package role')
-    .option(
-      '--minify',
-      'Minify the generated code. Does not apply to app or backend packages.',
-    )
-    .option(
-      '--experimental-type-build',
-      'Enable experimental type build. Does not apply to app or backend packages. [DEPRECATED]',
-    )
-    .option(
-      '--skip-build-dependencies',
-      'Skip the automatic building of local dependencies. Applies to backend packages only.',
-    )
-    .option(
-      '--stats',
-      'If bundle stats are available, write them to the output directory. Applies to app packages only.',
-    )
-    .option(
-      '--config <path>',
-      'Config files to load instead of app-config.yaml. Applies to app packages only.',
-      (opt: string, opts: string[]) => (opts ? [...opts, opt] : [opt]),
-      Array<string>(),
-    )
-    .action(lazy(() => import('./build').then(m => m.command)));
-
-  command
-    .command('export-dynamic-plugin')
+    .command('export')
     .description(
       'Build and export a plugin package to be loaded as a dynamic plugin. The repackaged dynamic plugin is exported inside a ./dist-dynamic sub-folder.',
     )
@@ -155,7 +115,7 @@ export function registerScriptCommand(program: Command) {
     .action(lazy(() => import('./export-dynamic-plugin').then(m => m.command)));
 
   command
-    .command('package-dynamic-plugins')
+    .command('package')
     .description(
       'Package up exported dynamic plugins as container image for deployment',
     )
@@ -192,39 +152,7 @@ export function registerScriptCommand(program: Command) {
     .action(
       lazy(() => import('./package-dynamic-plugins').then(m => m.command)),
     );
-
-  command
-    .command('schema')
-    .description('Print configuration schema for a package')
-    .action(lazy(() => import('./schema').then(m => m.default)));
-
-  command
-    .command('metadata')
-    .description('Add metadata to a package.json file')
-    .option(
-      '--dir <path/to/folder>',
-      'Folder in which to make changes to package.json, if not the current directory',
-      './',
-    )
-    .option('--author <author>', 'Set author', 'Red Hat')
-    .option('--license <license>', 'Set license', 'Apache-2.0')
-    .option('--homepage <homepage>', 'Set homepage', 'https://red.ht/rhdh')
-    .option(
-      '--bugs <bugs>',
-      'Set issue tracker URL',
-      'https://github.com/janus-idp/backstage-plugins/issues',
-    )
-    .option(
-      '--keywords <unique,keywords,to,add>',
-      'Add or replace keywords; there can be only one `support:` or `lifecycle:` value,\n                                     ' +
-        'but unlimited other keywords can be added. To remove values, manually edit package.json\n\n                                     ' +
-        'Valid values for support: alpha, beta, tech-preview, or production.\n                                     ' +
-        'Valid values for lifecycle: active, maintenance, deprecated, inactive, retired.\n                                    ',
-      'backstage,plugin,support:production,lifecycle:active',
-    )
-    .action(lazy(() => import('./metadata').then(m => m.command)));
-}
-
+  }
 export function registerCommands(program: Command) {
   registerScriptCommand(program);
 }
