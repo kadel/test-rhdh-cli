@@ -1,5 +1,11 @@
 ## @janus-idp/cli 1.0.0 (2024-08-06)
 
+## 3.6.9
+
+### Patch Changes
+
+- 3caa849: remove unvanted commands
+
 ## 3.6.8
 
 ### Patch Changes

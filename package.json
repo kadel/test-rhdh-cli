@@ -1,7 +1,7 @@
 {
   "name": "@tomaskral-tests/rhdh-cli",
   "description": "CLI for developing Backstage plugins and apps",
-  "version": "3.6.8",
+  "version": "3.6.9",
   "publishConfig": {
     "access": "public"
   },
